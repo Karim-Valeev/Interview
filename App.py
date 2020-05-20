@@ -9,9 +9,12 @@ dic = {
 
 print("List of commands: name; sername; email; git; birthday; \n")
 
-while(true):
+while(True):
     command = input("Enter command: ").strip().lower()
     if command == "exit":
         print('Bye-bye.')
-        return
-    print(dic[command],"\n")
+        break
+    if command not in dic:
+        print("Unknown command...\n")
+    else:
+        print(">> ",dic[command],"\n")
